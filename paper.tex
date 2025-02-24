@@ -1,0 +1,77 @@
+% This must be in the first 5 lines to tell arXiv to use pdfLaTeX, which is strongly recommended.
+\pdfoutput=1
+% In particular, the hyperref package requires pdfLaTeX in order to break URLs across lines.
+
+\documentclass[11pt]{article}
+
+% Remove the "review" option to generate the final version.
+\usepackage[review]{acl_mod}
+
+% Standard package includes
+\usepackage{times}
+\usepackage{latexsym}
+
+% For proper rendering and hyphenation of words containing Latin characters (including in bib files)
+\usepackage[T1]{fontenc}
+% For Vietnamese characters
+% \usepackage[T5]{fontenc}
+% See https://www.latex-project.org/help/documentation/encguide.pdf for other character sets
+
+% This assumes your files are encoded as UTF8
+\usepackage[utf8]{inputenc}
+
+% This is not strictly necessary, and may be commented out,
+% but it will improve the layout of the manuscript,
+% and will typically save some space.
+\usepackage{microtype}
+
+% This package helps printing tables more nicely.
+\usepackage{booktabs}
+
+% Uncomment and modify for custom submission date
+% \renewcommand{\subdate}{October 3, 2022}
+
+%--------------------------------------------------------------------------------------------------
+%--------------------------------------------------------------------------------------------------
+% Modify title, author information, module name here
+
+\def\paperTitle{Semantic Publishing}
+\def\authors{Yannick Lang}
+\def\matriculationNumber{1995498}
+\def\moduleName{KInf-Seminar-M}
+
+%--------------------------------------------------------------------------------------------------
+%--------------------------------------------------------------------------------------------------
+
+
+\title{\paperTitle}
+
+\author{\authors \\
+  Matrikelnummer: \matriculationNumber \\
+  \moduleName \\
+  Fakultät Wirtschaftsinformatik \& Angewandte Informatik \\
+  Otto-Friedrich-Universität Bamberg}
+
+\begin{document}
+\maketitle
+\input{sections/0-abstract.tex}
+
+\renewcommand*\contentsname{Inhaltsverzeichnis}
+{\footnotesize
+  \tableofcontents}
+
+\input{sections/1-einfuehrung.tex}
+
+
+
+\bibliography{custom}
+\bibliographystyle{acl_natbib}
+
+%\appendix
+%
+%\section{Example Appendix}
+%\label{sec:appendix}
+%
+%This is an appendix.
+
+\end{document}
