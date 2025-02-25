@@ -1,2 +1,58 @@
 \section{SCICERO}
 \label{sec:scicero}
+
+Ähnlich wie \citet{kuhn2017genuine} verfolgen auch \citet{DESSI2022109945} das Ziel, die Sondierung, Verbindung und Analyse wissenschaftlicher Publikationen zu erleichtern.
+Auch Sie sind der Ansicht, dass angesichts der Menge an wissenschaftlichen Publikationen, die jährlich veröffentlicht werden, maschinelle Unterstützung notwendig ist, um diese Ziele zu erreichen.
+
+
+
+\subsection{Motivation}
+
+Im Gegensatz zu Genuine Semantic Publishing, bei dem ganz Explizit die Autoren selbst maschinenverarbeitbare Informationen über ihre Forschungsbeiträge erstellen und veröffentlichen müssen, ist SCICERO ein extraktiver Ansatz, beruhend auf auf Natural Language Processing und Transformer-Modellen.
+
+Gegenüber von Menschen annotierten Verfahren bietet das den Vorteil, schnell auf große Mengen an Texten angewendet werden zu können.
+Der Vorteil gegenüber anderen KI-basierten Ansätzen ist, dass SCICERO nicht nur für die Analyse einzelner Publikationen, sondern explizit für den Vergleich und die Verknüpfung von Publikationen entwickelt wurde.
+Hierbei ergeben sich für maschinelle Verfahren zwei Herausforderungen: (1) die Identifikation von relevanten Entitäten und deren Relationen innerhalb eines Textes und (2) die Verknüpfung dieser Informationen zwischen Texten.
+Insbesondere bei letzterem ist es wichtig, dass Entitäten zusammengefasst werden, die in verschiedenen Texten unterschiedlich benannt werden, aber dasselbe Konzept beschreiben.
+
+\subsection{Vorgehen}
+
+SCICERO besteht aus drei Schritten: (1) Extraktion, (2) Entitäts- und Relationsbearbeitung und (3) Validierung.
+
+\paragraph{Extraktion}
+
+Im ersten Schritt werden mehrere verschiedene Methoden zur Entitäts- bzw. Relationsextraktion.
+Neben klassischen Methoden des Natural Language Processing, wie zum Beispiel Part-Of-Speech Tagging, kommen hier auch auf Transformer-Modellen basierende Verfahren wie DyGIEpp \cite{wadden-etal-2019-entity} zum Einsatz.
+Von welcher Methode eine Relation extrahiert wurde, wird als Teil der Herkunftsinformationen gespeichert.
+
+\paragraph{Entitäts- und Relationsbearbeitung}
+
+Anschließend werden Entitäten dedupliziert und Relationen auf eine Ontologie zurückgeführt.
+Um die Menge der gefundenen Entitäten zu reduzieren, kommen verschiedene Methoden zum Einsatz.
+Unter anderem werden Entitäten mit wenig Informationsgehalt entfernt, und Abkürzungen auf ihre Langform zurückgeführt.
+Außerdem kommen aus dem Information Retrieval bekannte Verfahren wie das Entfernen sogenannter stop-words und die Lemmatisierung, also die Bildung von Grundformen, zum Einsatz \cite{Ceri2013}.
+Anschließend werden die Entitäten auf kanonische Formen zurückgeführt.
+Neben Transformern werden hier auch externe Quellen wie DBpedia und Wikidata verwendet, die unter anderem Informationen über Synonyme und alternative Bezeichnungen enthalten.
+
+Auch die gefunden Relationen werden normalisiert und inhaltlich ähnliche Beziehungen zusammengefasst.
+
+\paragraph{Validierung}
+
+Im letzten Schritt werden die extrahierten Relationen validiert.
+Hier soll sichergestellt einerseits sichergestellt werden, dass sie konsistent mit anderen Relationen sind, die das System als korrekt annimmt und andererseits, dass die Entitäten einer Relation dem \textemdash gemäß der verwendeten Ontologie \textemdash erwarteten Typ entsprechen (z.B. Material, Aufgabe oder Metrik).
+Für die erste Validierungsform wird die Tatsache ausgenutzt, dass die Wahrscheinlichkeit, dass eine Relationen korrekt ist, mit der Anzahl der Artikeln korreliert, aus denen die Relation extrahiert wurde.
+Relationen mit hohem Support, die also aus vielen Artikeln stammen, werden als korrekt angenommen und zum fine-tuning eines Transformer-Modell verwendet.
+Für Relationen mit wenig Support entscheidet dieses Modell dann, ob sie konsistent mit den als korrekt angenommenen Relationen sind.
+Schlussendlich erfolgt eine regelbasierte Validierung, bei der die Entitäten einer Relation auf ihre Typen überprüft werden, beispielsweise kann eine Methode ein Material benutzen (\verb|<methodX usesMaterial materialY>|), nicht aber umgekehrt.
+Die verfügbaren Typen sind dabei in einer Ontologie festgelegt.
+
+\subsection{Zusammenhang mit Living Literature Reviews}
+
+Die Autoren haben SCICERO explizit für die Generierung von Wissensgraphen zu Wissenschaftlichen Forschungsfeldern entwickelt.
+So haben Sie aus 6.7 Millionen wissenschaftlichen Publikationen aus dem Bereich der Informatik den Wissensgraphen \textit{CS-KG} \cite{cskg} erstellt.
+Mit einem ähnlichen Ansatz hatten die Autoren zuvor bereits einen Wissensgraphen zu dem Subfeld der Künstlichen Intelligenz erstellt \cite{aikg} und damit die Anwendbarkeit auch für kleinere Felder demonstriert.
+
+Je nach intendiertem Forschungsfeld kann die verwendete Ziel-Ontologie angepasst werden, statt der auf Informatik spezialisierten Computer Science Knowledge Graph Ontology können beliebige Alternativen \textemdash beispielsweise \textit{Gene Ontology} oder \textit{Mathematics Subject
+    Classification} \cite{DESSI2022109945} \textemdash verwendet werden.
+Entsprechend müssen dann natürlich auch die Extraktionsmodule und Validierungsregeln angepasst werden.
+

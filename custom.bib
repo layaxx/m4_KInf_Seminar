@@ -8,3 +8,96 @@
   year      = {2017},
   publisher = {SAGE Publications Sage UK: London, England}
 }
+@article{DESSI2022109945,
+  title    = {SCICERO: A deep learning and NLP approach for generating scientific knowledge graphs in the computer science domain},
+  journal  = {Knowledge-Based Systems},
+  volume   = {258},
+  pages    = {109945},
+  year     = {2022},
+  issn     = {0950-7051},
+  doi      = {https://doi.org/10.1016/j.knosys.2022.109945},
+  url      = {https://www.sciencedirect.com/science/article/pii/S0950705122010383},
+  author   = {Danilo Dessí and Francesco Osborne and Diego {Reforgiato Recupero} and Davide Buscaldi and Enrico Motta},
+  keywords = {Knowledge graph, Scholarly domain, Scientific facts, Artificial intelligence},
+  abstract = {Science communication has a number of bottlenecks that include the rising number of published research papers and its non-machine-accessible and document-based paradigm, which makes the exploration, reading, and reuse of research outcomes rather inefficient. Recently, Knowledge Graphs (KG), i.e., semantic interlinked networks of entities, have been proposed as a new core technology to describe and curate scholarly information with the goal to make it machine readable and understandable. However, the main drawback of the use of such a technology is that researchers are asked to manually annotate their research papers and add their contributions within the KGs. To address this problem, in this paper we propose SCICERO, a novel KG generation approach that takes in input text from research articles and generates a KG of research entities. SCICERO uses Natural Language Processing techniques to parse the content of scientific papers to discover entities and relationships, exploits state-of-the-art Deep Learning Transformer models to make sense and validate extracted information, and uses Semantic Web best practices to formally represent the extracted entities and relationships, making the written content of research papers machine-actionable. SCICERO has been tested on a dataset of 6.7M papers about Computer Science generating a KG of about 10M entities. It has been evaluated on a manually generated gold standard of 3,600 triples that cover three Computer Science subdomains (Information Retrieval, Natural Language Processing, and Machine Learning) obtaining remarkable results.}
+}
+@inproceedings{wadden-etal-2019-entity,
+  title     = {Entity, Relation, and Event Extraction with Contextualized Span Representations},
+  author    = {Wadden, David  and
+               Wennberg, Ulme  and
+               Luan, Yi  and
+               Hajishirzi, Hannaneh},
+  editor    = {Inui, Kentaro  and
+               Jiang, Jing  and
+               Ng, Vincent  and
+               Wan, Xiaojun},
+  booktitle = {Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP)},
+  month     = nov,
+  year      = {2019},
+  address   = {Hong Kong, China},
+  publisher = {Association for Computational Linguistics},
+  url       = {https://aclanthology.org/D19-1585/},
+  doi       = {10.18653/v1/D19-1585},
+  pages     = {5784--5789},
+  abstract  = {We examine the capabilities of a unified, multi-task framework for three information extraction tasks: named entity recognition, relation extraction, and event extraction. Our framework (called DyGIE++) accomplishes all tasks by enumerating, refining, and scoring text spans designed to capture local (within-sentence) and global (cross-sentence) context. Our framework achieves state-of-the-art results across all tasks, on four datasets from a variety of domains. We perform experiments comparing different techniques to construct span representations. Contextualized embeddings like BERT perform well at capturing relationships among entities in the same or adjacent sentences, while dynamic span graph updates model long-range cross-sentence relationships. For instance, propagating span representations via predicted coreference links can enable the model to disambiguate challenging entity mentions. Our code is publicly available at \url{https://github.com/dwadden/dygiepp} and can be easily adapted for new tasks or datasets.}
+}
+@inbook{Ceri2013,
+  author    = {Ceri, Stefano
+               and Bozzon, Alessandro
+               and Brambilla, Marco
+               and Della Valle, Emanuele
+               and Fraternali, Piero
+               and Quarteroni, Silvia},
+  title     = {The Information Retrieval Process},
+  booktitle = {Web Information Retrieval},
+  year      = {2013},
+  publisher = {Springer Berlin Heidelberg},
+  address   = {Berlin, Heidelberg},
+  pages     = {13--26},
+  abstract  = {What does an information retrieval system look like from a bird's eye perspective? How can a set of documents be processed by a system to make sense out of their content and find answers to user queries? In this chapter, we will start answering these questions by providing an overview of the information retrieval process. As the search for text is the most widespread information retrieval application, we devote particular emphasis to textual retrieval. The fundamental phases of document processing are illustrated along with the principles and data structures supporting indexing.},
+  isbn      = {978-3-642-39314-3},
+  doi       = {10.1007/978-3-642-39314-3_2},
+  url       = {https://doi.org/10.1007/978-3-642-39314-3_2}
+}
+@inproceedings{cskg,
+  booktitle = {ISWC 2022: 21st International Semantic Web Conference},
+  month     = {October},
+  journal   = {The Semantic Web - ISWC 2022. Lecture Notes in Computer Science},
+  publisher = {Springer, Cham},
+  pages     = {678--696},
+  title     = {CS-KG: A Large-Scale Knowledge Graph of Research Entities and Claims in Computer Science},
+  year      = {2022},
+  volume    = {13489},
+  keywords  = {Knowledge Graph; Scholarly Data; Information Extraction; Natural Language Processing; Semantic Web; Artificial Intelligence},
+  abstract  = {In recent years, we saw the emergence of several approaches for producing machine-readable, semantically rich, interlinked descriptions of the content of research publications, typically encoded as knowledge graphs. A common limitation of these solutions is that they address a low number of articles, either because they rely on human experts to summarize information from the literature or because they focus on specific research areas. In this paper, we introduce the Computer Science Knowledge Graph (CS-KG), a large-scale knowledge graph composed by over 350M RDF triples describing 41M statements from 6.7M articles about 10M entities linked by 179 semantic relations. It was automatically generated and will be periodically updated by applying an information extraction pipeline on a large repository of research papers. CS-KG is much larger than all comparable solutions and offers a very comprehensive representation of tasks, methods, materials, and metrics in Computer Science. It can support a variety of intelligent services, such as advanced literature search, document classification, article recommendation, trend forecasting, hypothesis generation, and many others. CS-KG was evaluated against a benchmark of manually annotated statements, yielding excellent results.},
+  author    = {Dess{\'i}, Danilo and Osborne, Francesco and Reforgiato Recupero, Diego and Buscaldi, Davide and Motta, Enrico},
+  isbn      = {978-3-031-19432-0},
+  url       = {https://oro.open.ac.uk/85306/}
+}
+@inproceedings{aikg,
+  author    = {Dess{\`i}, Danilo
+               and Osborne, Francesco
+               and Reforgiato Recupero, Diego
+               and Buscaldi, Davide
+               and Motta, Enrico
+               and Sack, Harald},
+  editor    = {Pan, Jeff Z.
+               and Tamma, Valentina
+               and d'Amato, Claudia
+               and Janowicz, Krzysztof
+               and Fu, Bo
+               and Polleres, Axel
+               and Seneviratne, Oshani
+               and Kagal, Lalana},
+  title     = {AI-KG: An Automatically Generated Knowledge Graph of Artificial Intelligence},
+  booktitle = {The Semantic Web -- ISWC 2020},
+  year      = {2020},
+  publisher = {Springer International Publishing},
+  address   = {Cham},
+  pages     = {127--143},
+  abstract  = {Scientific knowledge has been traditionally disseminated and preserved through research articles published in journals, conference proceedings, and online archives. However, this article-centric paradigm has been often criticized for not allowing to automatically process, categorize, and reason on this knowledge. An alternative vision is to generate a semantically rich and interlinked description of the content of research publications. In this paper, we present the Artificial Intelligence Knowledge Graph (AI-KG), a large-scale automatically generated knowledge graph that describes 820K research entities. AI-KG includes about 14M RDF triples and 1.2M reified statements extracted from 333K research publications in the field of AI, and describes 5 types of entities (tasks, methods, metrics, materials, others) linked by 27 relations. AI-KG has been designed to support a variety of intelligent services for analyzing and making sense of research dynamics, supporting researchers in their daily job, and helping to inform decision-making in funding bodies and research policymakers. AI-KG has been generated by applying an automatic pipeline that extracts entities and relationships using three tools: DyGIE++, Stanford CoreNLP, and the CSO Classifier. It then integrates and filters the resulting triples using a combination of deep learning and semantic technologies in order to produce a high-quality knowledge graph. This pipeline was evaluated on a manually crafted gold standard, yielding competitive results. AI-KG is available under CC BY 4.0 and can be downloaded as a dump or queried via a SPARQL endpoint.},
+  isbn      = {978-3-030-62466-8}
+}
+
+
+
