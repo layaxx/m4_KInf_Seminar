@@ -2,8 +2,27 @@
 \label{sec:vergleich}
 
 
+\paragraph{Verwendete Technologien}
+
+Sowohl Genuine Semantic Publishing als auch SCICERO verwenden das vom World Wide Web Consortium (W3C) entwickelte Resource Description Framework (RDF) zur Modellierung der semantischen Daten.
+Während Genuine Semantic Publishing auf die Beschreibung der Ergebnisse durch die Autoren setzt, gegebenenfalls auch ganz ohne einen begleitenden Text, verwendet SCICERO Natural Language Processing und Transformer-Modelle zur Extraktion semantischer Informationen aus bestehenden, textbasierten Publikation.
+
+Beide Ansätze verwenden Ontologien, um die extrahierten Informationen zu strukturieren.
+SCICERO verwendet dabei in der Originalform eine explizit für Informatik ausgelegte Ontologie.
+Wie im vorangegangenen Kapitel beschrieben, ist aber mit gewissen Anpassungen auch die Verwendung einer anderen Ontologie möglich, beispielsweise für einen enger begrenzten Teilbereich der Informatik oder auch für komplett andere Forschungsfelder.
+Genuine Semantic Publishing ist währenddessen größtenteils agnostisch gegenüber der Wahl konkreter Technologien, so lange diese dazu beiträgt, die fünf Forderungen zu erfüllen.
+Entsprechend empfehlen die Autoren keine spezifische Ontologie, nennen aber Beispiele wie CiTO und SKOS.
+
+\paragraph{Nachvollziehbarkeit}
+
 Beide Ansätze enthalten Herkunftsinformationen (im Original: \textit{provenance}) über die Forschungsergebnisse.
 Bei Genuine Semantic Publishing beziehen sich diese Informationen auf die Autoren selbst, die die semantischen Daten erstellt haben.
+Dadurch soll ein Anreiz geschaffen werden, die Daten korrekt und vollständig zu erstellen \cite{kuhn2017genuine}.
 Bei SCICERO sind neben den Artikeln, aus denen die Informationen extrahiert wurden, auch die Modelle und Methoden, die zur Extraktion verwendet wurden, Teil der Herkunftsinformationen.
 
+
+
+\paragraph{Realisierbarkeit}
+
+\paragraph{Weitere Herausforderungen}
 % Vorteil GSP: weniger Rechenleistung notwendig
