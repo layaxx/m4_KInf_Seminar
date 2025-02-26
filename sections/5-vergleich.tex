@@ -18,13 +18,39 @@ Entsprechend empfehlen die Autoren keine spezifische Ontologie, nennen aber Beis
 Beide Ansätze enthalten Herkunftsinformationen (im Original: \textit{provenance}) über die Forschungsergebnisse.
 Bei Genuine Semantic Publishing beziehen sich diese Informationen auf die Autoren selbst, die die semantischen Daten erstellt haben.
 Dadurch soll ein Anreiz geschaffen werden, die Daten korrekt und vollständig zu erstellen \cite{kuhn2017genuine}.
-Bei SCICERO sind neben den Artikeln, aus denen die Informationen extrahiert wurden, auch die Modelle und Methoden, die zur Extraktion verwendet wurden, Teil der Herkunftsinformationen.
+Außerdem stellt das sicher, das die Intention der Autoren korrekt wiedergegeben wird, da diese die Daten direkt anlegen.
+Dadurch entfällt der Umweg über potentiell weniger eindeutigen Text in natürlicher Sprache, der anfälliger für Missverständnisse oder Unklarheiten ist.
 
+Bei SCICERO sind neben den Artikeln, aus denen die Informationen extrahiert wurden, auch die Modelle und Methoden, die zur Extraktion verwendet wurden, Teil der Herkunftsinformationen.
+Wie bei allen KI-basierten Ansätzen kann es aber natürlich auch hier zu Fehlern oder Halluzinationen kommen.
+Diese können an mehreren Stellen im Prozess auftreten.
+Das in der Extraktionsstufe beispielsweise Entitäten oder Relationen erkannt werden, die so gar nicht im Text enthalten sind, ist ein ganz natürlicher Aspekt von SCICERO, weswegen ja auch in der am Schluss noch eine Validierung erfolgt.
+Aber auch diese Validierung ist natürlich nicht perfekt, und es kann auch hier zu Fehlern kommen, indem entweder korrekte Daten verworfen oder Inkorrekte aufgenommen werden.
+Genauso können in der Harmonisierung der Daten Fehler auftreten, wenn beispielsweise zwei Entitäten, die eigentlich das gleiche Konzept beschreiben, nicht zusammengeführt werden oder zwei unterschiedliche Entitäten irrtümlich zusammengeführt werden.
+In der Evaluation von SCICERO finden die Autoren zwar heraus, dass bessere Werte als mit anderen Ansätzen erreicht werden, aber auch hier gibt es mit Precision-Raten von ca 75\% noch deutliches Verbesserungspotential.
 
 
 \paragraph{Realisierbarkeit}
 
-\paragraph{Weitere Herausforderungen}
+Eines der Hauptargumente, die bei dem beschriebenen Anwendungsszenario gegen Genuine Semantic Publishing sprechen, ist die Realisierbarkeit.
+Während SCICERO jederzeit schon eingesetzt werden könnte, um Wissensgraphen für Forschungsfelder zu erstellen \textemdash wie die Autoren ja auch mit ihrem Wissensgraphen zum Feld der Informatik zeigen \cite{cskg} \textemdash ist Genuine Semantic Publishing erst einmal eine Zukunftsvision.
+Neben dem Aufwand, den Autoren zukünftig in die Formalisierung ihrer Ergebnisse stecken müssten, erfordert dieser Ansatz in erster Linie einen Paradigmenwechsel im gesamten Publikationsprozess.
+Um das zu schaffen, müsste also eine heterogene Menge an Beteiligten \textemdash allen voran natürlich Wissenschaftler und Verleger \textemdash sich darauf einigen, diesen Weg zu beschreiten.
+
+Auch dann bleibt noch das Problem der bereits existierenden Publikationen, die nicht für maschinelle Verarbeitung ausgelegt sind.
+Für diese müsste dann eine zusätzliche Lösung, etwa eine rückwirkende Anreicherung relevanter Literatur mit semantischen Daten oder Methoden wie SCICERO, gefunden werden.
 
 \paragraph{Konsistenz}
-% Vorteil GSP: weniger Rechenleistung notwendig
+
+Ein weiterer potentieller Nachteil von Genuine Semantic Publishing ist die Konsistenz der erstellten Daten.
+Da die Autoren selbst für die Erstellung der semantischen Daten verantwortlich sind, könnte es zu Inkonsistenzen kommen, wenn beispielsweise verschiedene Autoren unterschiedliche Ontologien verwenden oder die gleichen Konzepte unterschiedlich benennen.
+Hier wären entweder standardisierte Ontologien notwendig oder eine (teil-) automatisierte Harmonisierung der Daten, wie sie beispielsweise SCICERO durchführt.
+
+Da bei SCICERO hingegen dasselbe System für die Extraktion und Harmonisierung der Daten aller Publikationen verwendet wird, ist die Konsistenz der Daten hier gewährleistet.
+Andererseits sind \textemdash gerade durch den Einsatz von Transformer-Modellen \textemdash auch Fehler in der Extraktion möglich, die dann in allen extrahierten Daten auftreten.
+Außerdem ist dadurch auch die benötigte Rechenleistung ein vielfaches höher als bei manuellen Ansätzen.
+
+
+\paragraph{Weitere Herausforderungen}
+
+Bei beiden Ansätzen besteht die Gefahr, dass die semantischen Daten nicht alle für das Living Literature Review relevanten Daten enthalten.
